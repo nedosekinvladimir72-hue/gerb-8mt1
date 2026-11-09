@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8f1d24">
+<meta name="description" content="Образовательный сайт класса 8МТ1 МАОУ Лицей № 23 ко Дню Государственного герба Российской Федерации. История, символика и викторина.">
+<title>Государственный герб России — 8МТ1</title>
+<style>
+:root{--red:#941f2a;--red2:#b52a35;--gold:#d7ad55;--ink:#252323;--muted:#716d68;--paper:#fbf8f2;--card:#fff;--line:#e9e1d5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}.brand img{width:92px;height:58px;object-fit:contain;flex:0 0 auto}.brand small{display:block;color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.08em}
+nav{display:flex;gap:22px;color:#5d5752;font-size:14px;font-weight:650}nav a:hover{color:var(--red)}
+.hero{background:linear-gradient(125deg,#761923,#a92732 60%,#76202a);color:white;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #ffffff24;border-radius:50%;right:-120px;top:-210px;box-shadow:0 0 0 45px #ffffff0a,0 0 0 90px #ffffff08}
+.hero-inner{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:34px;padding:68px 0 72px;position:relative;z-index:1}
+.eyebrow{color:#f0d69e;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800}
+h1{font-family:Georgia,serif;font-size:clamp(38px,5.4vw,66px);line-height:1.06;margin:14px 0 18px;font-weight:700;max-width:700px}
+.hero p{color:#f5e9e5;max-width:610px;font-size:17px;margin:0 0 26px}
+.date{display:inline-flex;align-items:center;gap:12px;border:1px solid #ffffff55;border-radius:14px;padding:11px 16px;background:#ffffff10}
+.date strong{font-size:22px;color:#f3d48e}.date span{font-size:13px;color:#fff}
+.coat-wrap{display:flex;justify-content:center;align-items:center;min-height:280px}
+.coat{width:min(270px,75%);height:270px;object-fit:contain;filter:drop-shadow(0 15px 18px #35090d55);background:#fff;border-radius:50%;padding:16px}
+.coat-note{font-size:11px;color:#f3d7d1;text-align:center;margin-top:10px}
+main{padding:54px 0 70px}.section-head{margin-bottom:24px}.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--red);font-weight:800}
+h2{font:700 clamp(28px,3.5vw,40px)/1.15 Georgia,serif;margin:6px 0 8px}.intro{color:var(--muted);max-width:700px;margin:0}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 58px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:21px;box-shadow:0 5px 18px #35220b08}
+.info .num{color:var(--gold);font:700 27px Georgia,serif}.info h3{margin:7px 0 5px;font-size:17px}.info p{margin:0;color:var(--muted);font-size:14px}
+.quiz{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,34px);box-shadow:0 12px 35px #39220b0a}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.counter{font-size:13px;color:var(--muted);font-weight:700}.track{height:7px;background:#eee8df;border-radius:10px;overflow:hidden;margin:0 0 25px}.bar{height:100%;width:0;background:var(--gold);transition:width .25s}
+.question{font-size:clamp(20px,3vw,25px);font-weight:750;line-height:1.3;margin:0 0 20px}
+.answers{display:grid;gap:10px}.answer{border:1px solid #e5ded4;background:#fff;border-radius:12px;padding:14px 16px;text-align:left;font-family:inherit;font-size:15px;font-weight:650;color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s;min-height:50px;touch-action:manipulation}
+.answer:hover:not(:disabled){border-color:var(--red);background:#fffaf8}.answer:disabled{cursor:default}.answer.correct{background:#edf7ef;border-color:#5b9a67;color:#245d30}.answer.wrong{background:#fff0ef;border-color:#c96b68;color:#8c2525}
+.feedback{min-height:27px;margin:14px 0 0;font-size:14px;font-weight:700}.feedback.good{color:#347744}.feedback.bad{color:#a52b32}
+.quiz-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:19px}.btn{border:0;border-radius:11px;padding:13px 19px;background:var(--red);color:white;font:inherit;font-weight:750;cursor:pointer;min-height:48px;touch-action:manipulation}.btn:hover{background:var(--red2)}.btn:disabled{opacity:.4;cursor:not-allowed}.subtle{font-size:12px;color:var(--muted)}
+.result{text-align:center;padding:18px 0}.result .score{font:700 58px Georgia,serif;color:var(--red);margin:10px}.result p{color:var(--muted)}
+footer{background:#211f1e;color:#fff;padding:25px 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}.foot-brand{display:flex;align-items:center;gap:12px}.foot-brand img{width:82px;height:56px;object-fit:contain;background:#fff;border-radius:8px;padding:4px;flex:0 0 auto}.foot small{color:#c5bdb6}
+@media(max-width:760px){.nav{padding:10px 0;align-items:center}.brand img{width:78px;height:50px}nav{gap:14px;flex-wrap:wrap;justify-content:flex-end;font-size:13px;padding-top:0}.hero-inner{grid-template-columns:1fr;padding:42px 0 46px;gap:20px}.coat-wrap{min-height:160px}.coat{width:160px;height:160px}.info-grid{grid-template-columns:1fr;gap:12px;margin-bottom:42px}.info{padding:18px}.quiz{padding:20px 16px}.foot{align-items:flex-start;flex-direction:column}.foot-brand img{width:76px;height:52px}}
+@media(max-width:430px){.wrap{width:calc(100% - 28px)}.nav{display:flex;flex-wrap:wrap;gap:8px}.brand{margin:0 auto 0 0}.brand img{width:70px;height:46px}.brand small{font-size:10px}nav{justify-content:flex-start;width:100%;padding:2px 0 5px}.hero-inner{padding:34px 0 38px}h1{font-size:clamp(34px,10vw,46px)}.hero p{font-size:15px}.date{padding:10px 12px}.date strong{font-size:20px}.quiz-top{align-items:flex-start;flex-direction:column;gap:4px}.quiz-actions{align-items:stretch}.quiz-actions .btn{min-width:112px}.subtle{align-self:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+:focus-visible{outline:3px solid #d7ad55;outline-offset:3px}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#top"><img src="logo-8mt1.png" alt="Логотип класса 8МТ1"><span>8МТ1<small>МАОУ «Лицей № 23»</small></span></a>
+  <nav><a href="#about">О гербе</a><a href="#quiz">Викторина</a></nav>
+ </div>
+</header>
+<section class="hero" id="top">
+ <div class="wrap hero-inner">
+  <div>
+   <div class="eyebrow">МАОУ «Лицей № 23» · класс 8МТ1</div>
+   <h1>Государственный герб Российской Федерации</h1>
+   <p>История, символика и значение одного из главных государственных символов нашей страны.</p>
+   <div class="date"><strong>30 ноября</strong><span>День Государственного герба<br>Российской Федерации</span></div>
+  </div>
+  <div>
+   <div class="coat-wrap">
+    <img class="coat" src="https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Russia.svg" alt="Государственный герб Российской Федерации" decoding="async" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+    <div hidden style="text-align:center;color:#f7e7d0;font-size:15px"><div style="font-size:72px;line-height:1.2" aria-hidden="true">🦅</div><b>Государственный герб РФ</b><br><span style="font-size:12px;color:#f3d7d1">Официальный государственный символ</span></div>
+   </div>
+   <div class="coat-note">Государственный символ Российской Федерации</div>
+  </div>
+ </div>
+</section>
+<main class="wrap">
+ <section id="about">
+  <div class="section-head"><div class="kicker">Главное о символе</div><h2>Что изображено на гербе?</h2><p class="intro">Государственный герб — официальный символ России. Его элементы имеют многовековую историю и связаны с государственностью страны.</p></div>
+  <div class="info-grid">
+   <article class="info"><div class="num">01</div><h3>Двуглавый орёл</h3><p>Золотой орёл с двумя головами — центральная фигура российского герба.</p></article>
+   <article class="info"><div class="num">02</div><h3>Три короны</h3><p>Над орлом расположены три короны — большая и две малые.</p></article>
+   <article class="info"><div class="num">03</div><h3>Скипетр и держава</h3><p>В лапах орла находятся скипетр и держава — традиционные знаки государственной власти.</p></article>
+  </div>
+ </section>
+ <section id="quiz">
+  <div class="section-head"><div class="kicker">Проверь свои знания</div><h2>Викторина</h2><p class="intro">18 вопросов о российском гербе. Выбери один правильный вариант ответа.</p></div>
+  <div class="quiz" id="quizBox">
+   <div class="quiz-top"><b>Викторина 8МТ1</b><span class="counter" id="counter">Вопрос 1 из 18</span></div>
+   <div class="track"><div class="bar" id="bar"></div></div>
+   <div id="play">
+    <p class="question" id="question"></p><div class="answers" id="answers" role="group" aria-label="Варианты ответа"></div>
+    <div class="feedback" id="feedback" aria-live="polite" role="status"></div>
+    <div class="quiz-actions"><span class="subtle" id="score">Правильных ответов: 0</span><button class="btn" id="next" disabled>Далее</button></div>
+   </div>
+   <div class="result" id="result" hidden><div class="kicker">Результат</div><div class="score" id="finalScore"></div><h3 id="resultTitle"></h3><p id="resultText"></p><button class="btn" id="restart">Пройти ещё раз</button></div>
+  </div>
+ </section>
+</main>
+<footer><div class="wrap foot"><div class="foot-brand"><img src="logo-8mt1.png" alt=""><div><b>8МТ1</b><br><small>МАОУ «Лицей № 23»</small></div></div><small>Образовательный проект ко Дню Государственного герба РФ · 30 ноября</small></div></footer>
+<script>
+const questions=[
+["Когда отмечается День Государственного герба России?",["12 декабря","30 ноября","4 ноября"],1],
+["Какое животное изображено на гербе России?",["Лев","Орёл","Сокол"],1],
+["Сколько голов у орла на гербе?",["Одна","Три","Две"],2],
+["Какого цвета орёл на гербе?",["Серебряный","Золотой","Чёрный"],1],
+["Какого цвета геральдический щит герба России?",["Красный","Синий","Зелёный"],0],
+["Сколько корон изображено над головами орла?",["Одна","Две","Три"],2],
+["Что держит орёл в правой лапе?",["Меч","Скипетр","Щит"],1],
+["Что держит орёл в левой лапе?",["Державу","Меч","Копьё"],0],
+["Кто изображён в центре герба на коне?",["Воин","Царь","Всадник"],2],
+["При каком правителе двуглавый орёл появился в государственной символике Руси?",["Пётр I","Иван III","Иван Грозный"],1],
+["В каком году был утверждён современный герб России?",["1991 год","1993 год","2000 год"],1],
+["Кто является автором современного изображения герба России?",["Евгений Ухналёв","Василий Суриков","Иван Билибин"],0],
+["Как называется предмет, символизирующий государственную власть и находящийся в лапе орла?",["Держава","Скипетр","Корона"],1],
+["Как называется всадник, изображённый на гербе России?",["Александр Невский","Георгий Победоносец","Дмитрий Донской"],1],
+["Как называется закон, устанавливающий описание Государственного герба России?",["Федеральный конституционный закон","Гражданский кодекс","Конституция Москвы"],0],
+["Какой город связан с изображением всадника, поражающего дракона, на гербе России?",["Санкт-Петербург","Казань","Москва"],2],
+["Как называется второй государственный символ России, представляющий собой трёхцветное полотнище?",["Гимн","Флаг","Герб"],1],
+["Сколько основных государственных символов у Российской Федерации?",["Два","Три","Четыре"],1]
+];
+let index=0,correct=0,answered=false;
+const $=id=>document.getElementById(id);
+function render(){
+ answered=false;const q=questions[index];$("counter").textContent=`Вопрос ${index+1} из ${questions.length}`;
+ $("bar").style.width=`${index/questions.length*100}%`;$("question").textContent=q[0];$("answers").innerHTML="";
+ $("feedback").textContent="";$("feedback").className="feedback";$("score").textContent=`Правильных ответов: ${correct}`;$("next").disabled=true;$("next").textContent=index===questions.length-1?"Результат":"Далее";
+ q[1].forEach((answer,i)=>{const b=document.createElement("button");b.type="button";b.className="answer";b.textContent=String.fromCharCode(1040+i)+") "+answer;b.setAttribute("aria-label",`Вариант ${String.fromCharCode(1040+i)}: ${answer}`);b.onclick=()=>choose(i);$("answers").appendChild(b)});
+}
+function choose(choice){
+ if(answered)return;answered=true;const right=questions[index][2];[...$("answers").children].forEach((b,i)=>{b.disabled=true;if(i===right)b.classList.add("correct");else if(i===choice)b.classList.add("wrong")});
+ if(choice===right){correct++;$("feedback").textContent="Верно! Отличный ответ.";$("feedback").classList.add("good")}
+ else{$("feedback").textContent="Не совсем. Правильный ответ: "+questions[index][1][right];$("feedback").classList.add("bad")}
+ $("score").textContent=`Правильных ответов: ${correct}`;$("next").disabled=false;
+}
+$("next").onclick=()=>{if(index<questions.length-1){index++;render()}else finish()};
+function finish(){
+ $("play").hidden=true;$("result").hidden=false;$("bar").style.width="100%";$("counter").textContent="Викторина завершена";
+ $("finalScore").textContent=`${correct} / ${questions.length}`;
+ $("resultTitle").textContent=correct>=15?"Прекрасный результат!":correct>=10?"Хорошая работа!":"Спасибо за участие!";
+ $("resultText").textContent=`Ты ответил правильно на ${correct} из ${questions.length} вопросов.`;
+}
+$("restart").onclick=()=>{index=0;correct=0;$("play").hidden=false;$("result").hidden=true;render()};
+render();
+</script>
+</body></html>
